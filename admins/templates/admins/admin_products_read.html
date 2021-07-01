@@ -1,0 +1,53 @@
+{% extends 'admins/base.html' %}
+
+{% block content %}
+    <main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Продукты</h1>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Продукты
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Название продукта</th>
+                            <th>Стоимость продукта</th>
+                            <th>Категоря продукта</th>
+                            <th>Кол-во остатка</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Название продукта</th>
+                            <th>Стоимость продукта</th>
+                            <th>Категоря продукта</th>
+                            <th>Кол-во остатка</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% comment %} не совсем понял механизм реализации cbv {% endcomment %}
+                        {% for item in object_list %} 
+                            <tr>
+                                <td>{{item.name}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.category}}</td>
+                                <td>{{item.quantity}}</td>
+                           </tr>
+                       {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'admins:product_create' %}">
+                    <button class="btn btn-success">Добавить продукт</button>
+                </a>
+            </div> 
+        </div>
+    </div>
+</main>
+{% endblock content %}
