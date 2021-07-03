@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import django.contrib.auth
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 
     'products',
     'users',
@@ -142,8 +145,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
 LOGIN_URL = '/users/login'
-
 LOGIN_REDIRECT_URL = 'index'
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'petnik930@gmail.com'
@@ -151,3 +154,15 @@ EMAIL_HOST_PASSWORD = '3571827Nike'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 DOMAIN_NAME = 'http://localhost:8000'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = 268576701707009
+SOCIAL_AUTH_FACEBOOK_SECRET = 'aab9e7d3b869e50b30dcd03295d6200b'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'index'
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '11.0'
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True

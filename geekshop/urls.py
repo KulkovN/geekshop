@@ -30,6 +30,7 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('baskets/', include('baskets.urls', namespace='basket')),
     path('admin-staff/', include('admins.urls', namespace='admins')),
+    path('social-auth/', include('social_django.urls', namespace="social")),
     
 ]
 
