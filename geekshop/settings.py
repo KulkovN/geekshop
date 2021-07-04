@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
 
 import django.contrib.auth
+
+env = environ.Env()
+env.read_env('.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m)@*o1taptjr&%%eu+8a^m5m=e6r0p=htn@41&=teey#-0c+0n'
+SECRET_KEY = env('SECRET_KEY', None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
 
+    'social_django',
     'products',
     'users',
     'baskets',
@@ -57,6 +61,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.vk.VKOAuth2', 
+]
+
 
 ROOT_URLCONF = 'geekshop.urls'
 
@@ -148,21 +159,18 @@ LOGIN_URL = '/users/login'
 LOGIN_REDIRECT_URL = 'index'
 
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'petnik930@gmail.com'
-EMAIL_HOST_PASSWORD = '3571827Nike'
-EMAIL_PORT = '587'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = True
-DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = env('DOMAIN_NAME')
 
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.facebook.FacebookOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-]
 
-SOCIAL_AUTH_FACEBOOK_KEY = 268576701707009
-SOCIAL_AUTH_FACEBOOK_SECRET = 'aab9e7d3b869e50b30dcd03295d6200b'
+SOCIAL_AUTH_FACEBOOK_KEY = '4203660716421692'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ee49445890788c958efbe8f68bfeceab'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'index'
-SOCIAL_AUTH_FACEBOOK_API_VERSION = '11.0'
 
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = 'FzQO4ppFCcEdkoDyukFL'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '88bece8d88bece8d88bece8d7888c6b8cd888be88bece8de85e5d7105db79d3981aaf49'

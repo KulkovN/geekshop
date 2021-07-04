@@ -44,8 +44,14 @@
                     <input class="btn btn-primary" type="submit" value="Авторизоваться">
                 </div>
                 <div>
+                <button class="btn btn-round form-control">
                     <a href="{% url 'social:begin' 'facebook' %}" class="button5" data-twitter>Зайти через Facebook</a>
+                </button>
+                <button class="btn btn-round form-control">
+                    <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">Вход через ВКонтакте </a>
+                </button>
                 </div>
+                
             </form>
         </div>
         <div class="card-footer text-center">
