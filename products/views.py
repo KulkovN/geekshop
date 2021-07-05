@@ -21,13 +21,6 @@ def products(request, category_id=None, page=1):
     context = {
         'title': 'GeekShop - Каталог','categories': ProductCategory.objects.all()}
     products_list = Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()
-    # вариант с тернарным оператором:   
-    # context.update({
-    #     'products_list': Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()})
-    # if category_id:
-    #     context['products_list'] = Product.objects.filter(category_id=category_id)
-    # else:
-    #     context['products_list'] = Product.objects.all()
     
     paginator = Paginator(products_list, 3)
     try:

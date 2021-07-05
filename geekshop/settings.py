@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'users',
     'baskets',
     'admins',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'products.context_processors.basket',
             ],
         },
     },
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE =  'ru-ru' # 'en-us'
+LANGUAGE_CODE = 'ru-ru'  # 'en-us'
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -128,7 +129,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
-    )
+)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -143,3 +144,10 @@ AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/users/login'
 
 LOGIN_REDIRECT_URL = 'index'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'petnik930@gmail.com'
+EMAIL_HOST_PASSWORD = '3571827Nike'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+DOMAIN_NAME = 'http://localhost:8000'
