@@ -60,12 +60,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    
 ]
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.vk.VKOAuth2', 
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 
@@ -83,6 +85,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'products.context_processors.basket',
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -133,7 +136,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -167,10 +170,12 @@ EMAIL_USE_TLS = True
 DOMAIN_NAME = env('DOMAIN_NAME')
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '4203660716421692'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'ee49445890788c958efbe8f68bfeceab'
+SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'index'
 
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = 'FzQO4ppFCcEdkoDyukFL'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = '88bece8d88bece8d88bece8d7888c6b8cd888be88bece8de85e5d7105db79d3981aaf49'
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_SECRET')
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+

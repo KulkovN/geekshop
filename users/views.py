@@ -2,15 +2,18 @@ from django.urls.base import reverse_lazy
 from users.models import User
 from django.core.mail import send_mail
 from django.conf import settings
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth, messages
 from django.urls import reverse
-from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic.edit import CreateView, UpdateView
-from common.views import CommonContextMixin
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+
+from django.contrib import auth
+from django.urls import reverse
+
+from django.contrib import messages
+
+
 
 
 # Create your views here.
@@ -21,15 +24,15 @@ from baskets.models import Basket
 
 
 def login(request):
-    if request.method == 'POST':
-        form = UserLoginForm(data=request.POST)
-        if form.is_valid():
-            user_name = request.POST['username']
-            password = request.POST['password']
-            user = auth.authenticate(username=user_name, password=password)
-            if user and user.is_active:
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('index'))
+    form = UserLoginForm(data=request.POST)
+    if request.method == 'POST' and form.is_valid():
+        user_name = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=user_name, password=password)
+    
+        if user and user.is_active:
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse('index'))
     else:
         form = UserLoginForm()
     context = {
@@ -37,6 +40,8 @@ def login(request):
         'form': form,
     }
     return render(request, 'users/login.html', context)
+
+
 
 
 def register(request):
