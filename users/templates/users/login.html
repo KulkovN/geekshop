@@ -42,12 +42,8 @@
                     <input class="btn btn-primary" type="submit" value="Авторизоваться">
                 </div>
                 <div>
-                {% comment %} <button class="btn btn-round form-control">
-                    <a href="{% url 'social:begin' 'facebook' %}" class="button5" data-twitter>Зайти через Facebook</a>
-                </button> {% endcomment %}
-                <button class="btn btn-round form-control">
-                    <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">Через ВКонтакте </a>
-                </button>
+                {% comment %} <a href="{% url 'social:begin' 'facebook' %}" class="button5" data-twitter><img src="/media/auth_icons/facebook.png"></a> {% endcomment %}
+                    <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/"><img src="/media/auth_icons/vk_1.png"> vk </a>
                 </div>
                 
             </form>

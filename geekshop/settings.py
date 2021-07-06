@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 import environ
 
+import django.core.mail.backends.filebased
+
+
 import django.contrib.auth
 
 env = environ.Env()
@@ -67,7 +70,7 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.vk.VKOAuth2', 
-    'social_core.backends.facebook.FacebookOAuth2',
+
 ]
 
 
@@ -86,6 +89,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'products.context_processors.basket',
                 'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -160,8 +164,14 @@ AUTH_USER_MODEL = 'users.User'
 
 LOGIN_URL = '/users/login'
 LOGIN_REDIRECT_URL = 'index'
+LOGIN_ERROR_URL = '/'
 
 
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'index'
+
+EMAIL_FILE_PATH = 'tmp/emails/'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
@@ -170,12 +180,20 @@ EMAIL_USE_TLS = True
 DOMAIN_NAME = env('DOMAIN_NAME')
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
-SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'index'
-
-
+SOCIAL_AUTH_VK_OAUTH2_IGNORE_DEFAULT_SCOPE = True
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_SECRET')
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.create_user',
+    'authapp.pipeline.save_user_profile',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
 

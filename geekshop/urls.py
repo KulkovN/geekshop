@@ -29,12 +29,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('products.urls', namespace='products')),
     path('users/', include('users.urls', namespace='users')),
-    path('social-auth/', include('social_django.urls', namespace="social")),
+    path('', include('social_django.urls', namespace="social")),
     path('baskets/', include('baskets.urls', namespace='basket')),
     path('admin-staff/', include('admins.urls', namespace='admins')),
     
-    
-    path('contacts/', views.contacts, name='contacts'),
 ]
 
 
