@@ -1,5 +1,5 @@
 import requests
-from authapp.models import ShopUserProfile
+from users.models import ShopUserProfile
 from datetime import datetime
 from django.utils import timezone
 from social_core.exceptions import AuthForbidden
