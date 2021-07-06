@@ -44,8 +44,8 @@ def register(request):
     if request.method == 'POST':
         form = UsersRegisterForm(data=request.POST)
         if form.is_valid():
-            form.save()
             user = form.save()
+            print(user)
             send_verify_mail(user)
             messages.success(
                 request, ('Ваш профиль создан. В целях продуктивного использования ресурса - активируйте профиль.\n\
@@ -53,6 +53,7 @@ def register(request):
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UsersRegisterForm()
+        
     context = {
         'title': 'GeekShop - Регистрация',
         'form': form

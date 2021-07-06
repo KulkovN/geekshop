@@ -58,6 +58,7 @@ class UsersRegisterForm(UserCreationForm):
         user.activation_key = hashlib.sha256(
             (user.email + salt).encode('utf-8')).hexdigest()
         user.save()
+        return user
 
 
 class UserProfileForm(UserChangeForm):
