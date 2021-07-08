@@ -2,27 +2,28 @@ from django.urls.base import reverse_lazy
 from users.models import User
 from django.core.mail import send_mail
 from django.conf import settings
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth, messages
 from django.urls import reverse
-from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic.edit import CreateView, UpdateView
-from common.views import CommonContextMixin
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+
+from django.contrib import auth
+from django.urls import reverse
+
+from django.contrib import messages
 
 
 # Create your views here.
 
 
-from users.forms import UserLoginForm, UsersRegisterForm, UserProfileForm
+from users.forms import UserLoginForm, UsersRegisterForm, UserProfileForm, ShopUserProfileForm
 from baskets.models import Basket
 
 
 def login(request):
+    form = UserLoginForm(data=request.POST)
     if request.method == 'POST':
-        form = UserLoginForm(data=request.POST)
         if form.is_valid():
             user_name = request.POST['username']
             password = request.POST['password']
@@ -43,8 +44,8 @@ def register(request):
     if request.method == 'POST':
         form = UsersRegisterForm(data=request.POST)
         if form.is_valid():
-            form.save()
             user = form.save()
+            print(user)
             send_verify_mail(user)
             messages.success(
                 request, ('Ваш профиль создан. В целях продуктивного использования ресурса - активируйте профиль.\n\
@@ -52,6 +53,7 @@ def register(request):
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UsersRegisterForm()
+        
     context = {
         'title': 'GeekShop - Регистрация',
         'form': form
@@ -84,21 +86,24 @@ def verify(request, email, key):
 
 @login_required
 def profile(request):
-    user = request.user
     if request.method == 'POST':
         form = UserProfileForm(
-            data=request.POST, files=request.FILES, instance=user)
-        if form.is_valid():
+            data=request.POST, files=request.FILES, instance=request.user)
+        profile_form = ShopUserProfileForm(
+            data=request.POST, instance=request.user.shopuserprofile)
+        if form.is_valid() and profile_form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('users:profile'))
         else:
             print(form.errors)
     else:
-        form = UserProfileForm(instance=user)
+        form = UserProfileForm(instance=request.user)
+        profile_form = ShopUserProfileForm(
+            instance=request.user.shopuserprofile)
     context = {
         'title': 'GeekShop - Личный кабинет',
         'form': form,
-        # 'baskets': Basket.objects.filter(user=user),
+        'profile_form': profile_form,
     }
     return render(request, 'users/profile.html', context)
 
@@ -108,38 +113,3 @@ def logout(request):
     return HttpResponseRedirect(reverse('index'))
 
 
-"""class Login(LoginView):
-    authentication_form = UserLoginForm
-    template_name = 'users/login.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Login, self).get_context_data(**kwargs)
-        context['title'] = 'Geekshop - Авторизация'
-        return context"""
-
-"""class Register(CreateView):
-    model = User
-    template_name = 'users/register.html'
-    form_class = UsersRegisterForm
-    success_url = reverse_lazy('users:login')
-
-    def get_context_data(self, **kwargs):
-        context = super(Register, self).get_context_data(**kwargs)
-        context['title'] = 'Geekshop - Регистрация'
-        return context"""
-
-"""class Profile(CommonContextMixin, UpdateView):
-   
-    model = User
-    form_class = UserProfileForm
-    template_name = 'users/profile.html'
-    title = 'GeekShop - Личный кабинет'
-    # success_url = reverse_lazy('users:profile')
-
-    def get_success_url(self):
-        return reverse_lazy('users:profile', args=(self.object.pk))
-
-    def get_context_data(self, **kwargs):
-        context = super(Profile, self).get_context_data(**kwargs)
-        context['baskets'] = Basket.objects.filter(user=self.object)
-        return context"""

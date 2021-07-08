@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 
 
+from . import views
 from products.views import index
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('products.urls', namespace='products')),
     path('users/', include('users.urls', namespace='users')),
+    path('', include('social_django.urls', namespace="social")),
     path('baskets/', include('baskets.urls', namespace='basket')),
     path('admin-staff/', include('admins.urls', namespace='admins')),
     
