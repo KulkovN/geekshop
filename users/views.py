@@ -45,7 +45,6 @@ def register(request):
         form = UsersRegisterForm(data=request.POST)
         if form.is_valid():
             user = form.save()
-            print(user)
             send_verify_mail(user)
             messages.success(
                 request, ('Ваш профиль создан. В целях продуктивного использования ресурса - активируйте профиль.\n\
@@ -53,7 +52,7 @@ def register(request):
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UsersRegisterForm()
-        
+
     context = {
         'title': 'GeekShop - Регистрация',
         'form': form
@@ -68,6 +67,7 @@ def send_verify_mail(user):
     title = f'Подтверждение учетной записи пользователя {user.username}'
     message = f'Для подтверждения учетной записи пользователя {user.username} на GeekShop Store \
     {settings.DOMAIN_NAME} перейдите по ссылке: \n{settings.DOMAIN_NAME}{verify_link}'
+    print('Сообщение отправлено')
     return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
 
 
@@ -111,5 +111,3 @@ def profile(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
-
-

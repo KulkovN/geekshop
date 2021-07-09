@@ -17,11 +17,13 @@ def index(request):
 
 def products(request, category_id=None, page=1):
     """ products controller """
-    
+
     context = {
-        'title': 'GeekShop - Каталог','categories': ProductCategory.objects.all()}
-    products_list = Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()
-    
+        'title': 'GeekShop - Каталог',
+        'categories': ProductCategory.objects.all()}
+    products_list = Product.objects.filter(
+        category_id=category_id) if category_id else Product.objects.all()
+
     paginator = Paginator(products_list, 3)
     try:
         products_paginator = paginator.page(page)
@@ -30,7 +32,12 @@ def products(request, category_id=None, page=1):
     except EmptyPage:
         products_paginator = paginator.page(paginator.num_pages)
 
-    context ['products_list'] = products_paginator
+    context['products_list'] = products_paginator
     return render(request, 'products/products.html', context)
 
 
+def show_contacts(request):
+    context = {
+        'title': 'GeekShop - контакты',
+    }
+    return render(request, 'products/contacts.html', context)

@@ -1,0 +1,44 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css  %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/products.css' %}">
+{% endblock css  %}
+	
+{% block content %}
+<br>
+<div>
+    {% if item.is_active %}
+        {% for item in object_list %}
+            <div class="container">
+               <div class="row row-cols-4">
+                   <div class="col">Идентификатор заказа: {{ item.pk }} </div>
+                   <div class="col">Пользователь: {{ item.user }} </div>
+                   <div class="col">Дата создания: {{ item.created }} </div>
+                   {% if item.update %}
+                       <div class="col">Дата обновления: {{ item.updated }}</div>
+                   {% endif %}
+                   <div class="col"> статус заказа:  {{ item.status }}</div>
+                 </div>
+                 <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="container-xxl" style="margin-bottom: 20px; text-align: center;">
+            {% comment %} <div class="row row-cols-4"> {% endcomment %}
+                <div class="col"> Вы не отправили на обратку ни одного заказа </div>
+            {% comment %} </div> {% endcomment %}
+        </div>
+    {% endif %}
+        
+</div>
+{% endblock content %}
+                                                         
+{% block footer %}
+    <footer class="py-5 bg-dark">
+        <div class="container">
+    		<p class="m-0 text-center text-white">Copyright &copy; GeekShop {% now "j F Y" %}</p>   
+        </div>
+        <!-- /.container -->
+    </footer>	
+{% endblock footer %}
