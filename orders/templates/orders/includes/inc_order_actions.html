@@ -1,18 +1,27 @@
 {% if object.status == 'FM' %}
-   <button class="btn btn-warning btn-round form-control last">
-       <a href="{% url 'order:forming_complete' object.pk %}">
-           Совершить покупку
-       </a>
-   </button>
-   <button class="btn btn-default btn-round form-control last">
-       <a href="{% url 'order:delete' object.pk %}">Удалить</a>
+   <button class="d-grid gap-2 col-4 mx-auto btn btn-warning">
+       <a href="{% url 'orders:forming_complete' object.pk %}"><strong>Заявка на оплату</strong></a>
+     </button>
+    <br>
+   <button class="d-grid gap-2 col-4 mx-auto btn btn-danger">
+       <a href="{% url 'orders:delete' object.pk %}"><strong>Удалить</strong></a>
    </button>
 {% endif %}
-<button class="btn btn-info btn-round form-control last">
-   <a href="{% url 'order:list' %}">
-       К списку заказов
-   </a>
+<br>
+<button class="d-grid gap-2 col-4 mx-auto btn btn-info">
+   <a href="{% url 'orders:list' %}"><strong>К списку заказов</strong></a>
+   </button>
+<br>
+<button class="d-grid gap-2 col-4 mx-auto btn btn-secondary">
+   <a href="{% url 'products:index' %}"><strong>В каталог</strong></a>
 </button>
-<button class="btn btn-default btn-round form-control last">
-   <a href="{% url 'products:index' %}">В каталог</a>
-</button>
+
+<hr>
+{% block footer %}
+    <footer class="py-5 bg-dark">
+    <div class="container">
+		<p class="m-0 text-center text-white">Copyright &copy; GeekShop {% now "j F Y" %}</p>   
+    </div>
+    <!-- /.container -->
+</footer>	
+{% endblock footer %}
