@@ -56,7 +56,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <li><a class="dropdown-item" href="{% url 'users:profile'%}">Профиль</a></li>
-                        <li><a class="dropdown-item" href="{% url 'orders:check_all_orders' %}">Заказы</a></li>
+                        <li><a class="dropdown-item" href="{% url 'orders:list' %}">Заказы</a></li>
                         {% if user.is_staff or user.is_superuser %}
                             <li><a class="dropdown-item" href="{% url 'admins:index' %}"><i class="fas fa-users-cog"></i> Админка </a></li>
                         {% endif %}
@@ -79,7 +79,7 @@
 
 {% block content %} {% endblock content %}
 
-{% block footer %} {% endblock footer %}
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -92,4 +92,5 @@
 
 </body>
 
+{% block footer %} {% endblock footer %}
 </html>

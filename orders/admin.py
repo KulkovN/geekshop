@@ -3,7 +3,7 @@ from django.db import models
 
 # # Register your models here.
 
-from .models import Order
+from .models import Order, OrderItem
 
 
 class AdminOrderView(admin.ModelAdmin):
@@ -12,4 +12,11 @@ class AdminOrderView(admin.ModelAdmin):
     search_fields = ('user', 'created', )
 
 
+class AdminOIView(admin.ModelAdmin):
+    list_display = ('order', 'product', 'quantity',)
+    list_display_links = ('order', 'product',)
+    search_fields = ('order',)
+
+
 admin.site.register(Order, AdminOrderView)
+admin.site.register(OrderItem, AdminOIView)

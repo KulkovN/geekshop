@@ -6,16 +6,26 @@ from django.conf import settings
 from django.db import models
 
 from products.models import Product
+# from baskets.models import Basket
 
 
 class Order(models.Model):
+    FORMING = 'FM'
+    SENT_TO_PROCEED = 'STR'
+    PROCEEDED = 'PRD'
+    PAID = 'PD'
+    READY = 'RD'
+    CANCEL = 'CNC'
+    DELIVERED = 'DVD'
+
     STATUS = (
-        ('CRE', 'Создание'),
-        ('PD', 'Оплачен'),
-        ('RDE', 'Готов к выдаче'),
-        ('UPD', 'Обнволен'),
-        ('CNL', 'Отменён'),
-        ('DRD', 'Выдан')
+        (FORMING, 'Формируется'),
+        (SENT_TO_PROCEED, 'Отправлен в обработку'),
+        (PROCEEDED, 'Обработан'),
+        (PAID, 'Оплачен'),
+        (READY, 'Готов к выдаче'),
+        (CANCEL, 'Отменён'),
+        (DELIVERED, 'Выдан')
     )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -25,7 +35,7 @@ class Order(models.Model):
     is_active = models.BooleanField(default=True)
 
     status = models.CharField(
-        choices=STATUS, default="CRE", verbose_name='Cтатус', max_length=3)
+        choices=STATUS, default=FORMING, verbose_name='Cтатус', max_length=3)
 
     class Meta:
         verbose_name_plural = 'Заказы'
@@ -50,7 +60,6 @@ class Order(models.Model):
         self.save()
 
 
-
 class OrderItem(models.Model):
     order = models.ForeignKey(
         Order, on_delete=models.CASCADE, related_name='orderitems')
@@ -58,6 +67,10 @@ class OrderItem(models.Model):
         Product, on_delete=models.CASCADE, verbose_name='продукт')
     quantity = models.PositiveSmallIntegerField(
         default=0, verbose_name='количество')
+    class Meta:
+        verbose_name_plural = 'Элементы заказов'
+        verbose_name = 'Элемент'
+        ordering = ['order']
 
     def get_product_cost(self):
         return self.product.price * self.quantity
