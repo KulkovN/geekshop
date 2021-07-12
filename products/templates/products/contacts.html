@@ -6,37 +6,30 @@
 {% endblock css  %}
 
 {% block content %}
-	<div class="container">
-  			<div class="row">
-  			  <div class="col">
+	<div class="text-center">
 				<h1>Наши контакты: </h1>
-			</div>
-		</div>
 	</div>
-	<div>
-		<div>
-		<div class="container">
-  			<div class="row">
-  			  <div class="col">
-  					<h5>Телефон</h5>
-					<p>+7-888-888-8888</p>
-  			  </div>
-  			  <div class="col">
-  			    <h5>Наш e-mail: </h5>
-				<p>info@geekshop.ru</p>
-  			  </div>
-  			  <div class="col">
-  			    <h5>Адрес:</h5>
-				<a href="https://yandex.ru/maps/213/moscow/?ll=37.640530%2C55.730589&mode=whatshere&whatshere%5Bpoint%5D=37.638947%2C55.730928&whatshere%5Bzoom%5D=17.47&z=17.47"><p>г. Москва, Павелецкая площадь,1А</p></a>
-  			  </div>
-  			</div>
-		</div>
+		{% comment %} <div class="container"> {% endcomment %}
+			<table class="table table-dark table-hover">
+  				<thead>
+				<tr>	
+					<th scope="col">Телефон</th>
+					<th scope="col">Наш e-mail</th>
+					<th scope="col">Адрес</th>
+				</tr>
+				</thead>
+				<tbody>
+					<td>+7-888-888-8888</td>
+					<td>info@geekshop.ru</td>
+					<td><a href="https://yandex.ru/maps/213/moscow/?ll=37.640530%2C55.730589&mode=whatshere&whatshere%5Bpoint%5D=37.638947%2C55.730928&whatshere%5Bzoom%5D=17.47&z=17.47">г. Москва, Павелецкая площадь,1А</a></td>
+				</tbody>
+  			</table>
+		{% comment %} </div> {% endcomment %}
+		<hr>
 		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac6e36197b2fb1d49035d80d91f67c14905758e077783a4fe81c43e4753c90ef1&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
 	</div>
 </div>
 {% endblock content %}
-		{% comment %} <div class="clr"></div>
-	</div>	 {% endcomment %}
 {% block footer %}
     <footer class="py-5 bg-dark">
     <div class="container">

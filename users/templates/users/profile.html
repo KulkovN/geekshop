@@ -18,16 +18,17 @@
                                 {% static 'vendor/img/users/default_avatar.jpg' %} {% endif %}"
                          class="img-thumbnail">
             </div>
+            
             <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
              {% csrf_token %}
-              <div class="form-row mb-lg-2">
-                    <div class="col-lg-15">
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="{{form.avatar.id_for_label}}">Заменить автар </label>
-                            {{form.avatar}}
-                        </div>
+            <div class="form-row mb-lg-2">
+                <div class="col-lg-15">
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="{{form.avatar.id_for_label}}">Заменить автар </label>
+                        {{form.avatar}}
                     </div>
                 </div>
+            </div>
                 <div class="form-row">
                     <div class="col-lg-15">
                         <div class="form-group">
@@ -43,13 +44,13 @@
                     </div>
                 </div>
                 <div class="form-row">
-                <br>
-                    <div class="col-lg-15">
-                        <label class="small mb-1" for="{{ profile_form.gender.id_for_label }}">Пол</label>
-                        {{ profile_form.gender }}
-                    </div>
-                <br>
-               
+                    <br>
+                        <div class="col-lg-15">
+                            <label class="small mb-1" for="{{ profile_form.gender.id_for_label }}">Пол</label>
+                            {{ profile_form.gender }}
+                        </div>
+                    <br>
+                </div>
                 <div class="form-row">
                     <div class="col-lg-15">
                         <label class="small mb-1" for="{{form.username.id_for_label}}">Логин</label>
@@ -60,18 +61,18 @@
                             почты</label>
                         {{form.email}}
                     </div>
-                </div>
+              </div>
                     <div class="col-lg-15">
                         <label class="small mb-1" for="{{ profile_form.tagline.id_for_label }}">Теги</label>
                         {{ profile_form.tagline }}
                     </div>
                 </div>
-                {% comment %} <div class="form-row">
-                    <div class="col-lg-15">
+                <div class="form-row">
+                    <div class="col-lg-7">
                         <label class="small mb-1" for="{{ profile_form.about_me.id_for_label }}">О себе</label>
                         {{ profile_form.about_me }}
                     </div>
-                </div> {% endcomment %}
+                </div>
                 <div class="form-row">
                     <div class="col-lg-15" style="margin-bottom: 15px; margin-top: 15px;">
                         <input class="btn btn-success btn-lg btn-block" type="submit" value="Сохранить">
@@ -81,6 +82,14 @@
         </div>
         <div class="col-lg-5">
             {% include 'baskets/baskets.html' %}
-
-    </div>
+        </div>
 {% endblock %}
+
+{% block footer %}
+    <footer class="py-5 bg-dark">
+    <div class="container">
+		<p class="m-0 text-center text-white">Copyright &copy; GeekShop {% now "j F Y" %}</p>   
+    </div>
+    <!-- /.container -->
+</footer>	
+{% endblock footer %}
