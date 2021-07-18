@@ -24,7 +24,7 @@ def index(request):
 
 def products(request, category_id=None, page=1):
     context = {
-        'title': 'geekShop - каталог',
+        'title': 'GeekShop - каталог',
         'categories': ProductCategory.objects.all()
     }
     products = Product.objects.filter(
@@ -39,3 +39,5 @@ def products(request, category_id=None, page=1):
 
     context.update({'products': products_paginator})
     return render(request, 'products/products.html', context)
+
+

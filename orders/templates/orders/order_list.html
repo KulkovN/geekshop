@@ -1,0 +1,49 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+    <div class="text-center h2 header">
+        Ваши заказы, {% if user.first_name %} {% else %} Пользователь {% endif %}
+    </div>
+<br>
+<div class="container">
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Создан</th>
+            <th>Обновлён</th>
+            <th>Статус</th>
+            <th>Просмотреть заказ</th>
+            <th>Изменить заказ</th>
+            <th>Удалить заказ</th>
+        </thead>
+        <tbody>
+       
+            {% for item in object_list %}
+                <tr>
+                    <td>{{ item.pk }}</td>
+                    <td>{{ item.created|date:"d.m.Y H:i:s" }}</td>
+                    <td>{{ item.updated|date:"d.m.Y H:i:s" }}</td>
+                    <td>{{ item.get_status_display }}</td>
+                    <td><a class="d-grid gap-2 btn btn-dark" href="{% url 'orders:read' item.pk %}">Посмотреть</a></td>
+                    <td>
+                        {% if item.status == 'FM' %}
+                        <a class="d-grid gap-2 btn btn-dark" href="{% url 'orders:update' item.pk %}">Изменить</a>
+                        {% endif %}
+                    </td>
+                     <td>
+                        {% if item.status == 'FM' %}
+                        <a class="d-grid gap-2 btn btn-dark" href="{% url 'orders:delete' item.pk %}">Удалить</a>
+                        {% endif %}
+                </tr> 
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a class="btn btn-primary" href="{% url 'orders:create' %}">Новый заказ</a>
+        <br>
+        <a class="btn btn-secondary" href="{% url 'index' %}">На главную</a>
+    </div>
+
+{% endblock content %}

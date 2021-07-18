@@ -1,0 +1,27 @@
+{% if object.status == 'FM' %}
+   <button class="d-grid gap-2 col-4 mx-auto btn btn-warning">
+       <a href="{% url 'orders:forming_complete' object.pk %}"><strong>Заявка на оплату</strong></a>
+     </button>
+    <br>
+   <button class="d-grid gap-2 col-4 mx-auto btn btn-danger">
+       <a href="{% url 'orders:delete' object.pk %}"><strong>Удалить</strong></a>
+   </button>
+{% endif %}
+<br>
+<button class="d-grid gap-2 col-4 mx-auto btn btn-info">
+   <a href="{% url 'orders:list' %}"><strong>К списку заказов</strong></a>
+   </button>
+<br>
+<button class="d-grid gap-2 col-4 mx-auto btn btn-secondary">
+   <a href="{% url 'products:index' %}"><strong>В каталог</strong></a>
+</button>
+
+<hr>
+{% block footer %}
+    <footer class="py-5 bg-dark">
+    <div class="container">
+		<p class="m-0 text-center text-white">Copyright &copy; GeekShop {% now "j F Y" %}</p>   
+    </div>
+    <!-- /.container -->
+</footer>	
+{% endblock footer %}

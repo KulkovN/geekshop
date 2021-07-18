@@ -14,7 +14,7 @@
                         <div class="row text-center">
                             <div class="col-lg-4">
                                 <input name="{{basket.id}}" type="number" class="form-control"
-                                       value="{{basket.quantiti}}" min="0">
+                                       value="{{basket.quantity}}" min="0">
                             </div>
                             <div class="col-lg-4"> {{ basket.sum}}</div>
                             <div class="col-lg-4">
@@ -33,7 +33,9 @@
                     <h4 class="float-right"> {{ basket.sum }} </h4>
                 </div>
             </div>
-            <button type="button" class="btn btn-success btn-lg float-right">Оформить</button>
+             
+            {% comment %} <button type="button" class="btn btn-success btn-lg float-right"> </button> {% endcomment %}
+            <a href= "{% url 'orders:create' %}" type="button" class="btn btn-success btn-lg float-right"> Оформить </a>
         </div>
    {% else %}
     <h4 class="mt-3 mb-3 text-center">

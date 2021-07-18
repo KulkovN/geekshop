@@ -1,0 +1,31 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<br>
+<br>
+   <div class="category_delete">
+       <div class="h1">Уверены, что хотите удалить?</div>
+       {% include 'orders/includes/inc_order_summary.html' %}
+       <form action="{% url 'orders:delete' object.pk %}" method="post">
+           {% csrf_token %}
+           <input class="d-grid gap-2 col-4 mx-auto btn btn-danger" type="submit" value="удалить">
+       </form>
+       <br>
+       <button class="d-grid gap-2 col-4 mx-auto btn btn-warning">
+           <a href="{% url 'orders:list' %}">отмена</a>
+       </button>
+   </div>
+</div>
+   <hr>
+{% endblock content %}
+
+{% block footer %}
+    <footer class="py-5 bg-dark">
+    <div class="container">
+		<p class="m-0 text-center text-white">Copyright &copy; GeekShop {% now "j F Y" %}</p>   
+    </div>
+    <!-- /.container -->
+</footer>	
+{% endblock footer %}

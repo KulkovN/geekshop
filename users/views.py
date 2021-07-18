@@ -1,16 +1,12 @@
-from django.urls.base import reverse_lazy
 from users.models import User
 from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth, messages
 from django.urls import reverse
-from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-
 from django.contrib import auth
 from django.urls import reverse
-
 from django.contrib import messages
 
 
@@ -45,7 +41,6 @@ def register(request):
         form = UsersRegisterForm(data=request.POST)
         if form.is_valid():
             user = form.save()
-            print(user)
             send_verify_mail(user)
             messages.success(
                 request, ('Ваш профиль создан. В целях продуктивного использования ресурса - активируйте профиль.\n\
@@ -53,7 +48,7 @@ def register(request):
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UsersRegisterForm()
-        
+
     context = {
         'title': 'GeekShop - Регистрация',
         'form': form
@@ -71,7 +66,7 @@ def send_verify_mail(user):
     return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
 
 
-def verify(request, email, key):
+def verify(request, email, key, backend='django.contrib.auth.backends.ModelBackend'):
     # verify function
     user = User.objects.filter(email=email).first()
     if user and user.activation_key == key and not user.is_activation_key_expired():
@@ -79,7 +74,7 @@ def verify(request, email, key):
         user.activation_key = ''
         user.activation_key_created = None
         user.save()
-        auth.login(request, user)
+        auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
 
     return render(request, 'users/verify.html')
 
@@ -111,5 +106,3 @@ def profile(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
-
-
