@@ -1,0 +1,1335 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2021-07-11T10:35:44.792Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Order object (1)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2021-07-11T10:35:44.797Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Order object (2)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2021-07-11T14:06:11.579Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "3",
+    "object_repr": "Order object (3)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2021-07-11T14:06:11.584Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "4",
+    "object_repr": "Order object (4)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2021-07-11T15:19:02.619Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "7",
+    "object_repr": "Order object (7)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2021-07-11T15:19:11.002Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "5",
+    "object_repr": "Order object (5)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2021-07-11T15:19:11.007Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "6",
+    "object_repr": "Order object (6)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2021-07-11T15:19:11.012Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "7",
+    "object_repr": "Order object (7)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2021-07-11T15:19:11.017Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "8",
+    "object_repr": "Order object (8)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2021-07-13T08:28:56.528Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "9",
+    "object_repr": "Order object (9)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2021-07-13T08:28:56.532Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "10",
+    "object_repr": "Order object (10)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2021-07-13T08:28:56.537Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "11",
+    "object_repr": "Order object (11)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2021-07-13T08:29:29.140Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "9",
+    "object_repr": "Order object (9)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2021-07-13T08:29:29.146Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "10",
+    "object_repr": "Order object (10)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2021-07-13T08:29:29.150Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "11",
+    "object_repr": "Order object (11)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2021-07-13T08:34:10.564Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "Темно-синие широкие строгие брюки ASOS DESIGN",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2021-07-13T08:34:16.215Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Черные туфли на платформе с 3 парами люверсов Dr Martens 1461 Bex",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2021-07-13T08:34:20.997Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Черный рюкзак Nike Heritage",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2021-07-13T08:34:25.715Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Коричневый спортивный oversized-топ ASOS DESIGN",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2021-07-13T08:34:30.382Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Синяя куртка The North Face",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2021-07-13T08:34:35.969Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Худи черного цвета с монограммами adidas Originals",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2021-07-13T08:36:12.598Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "12",
+    "object_repr": "Order object (12)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2021-07-13T09:50:06.791Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "13",
+    "object_repr": "Order object (13)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2021-07-13T09:50:06.797Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "14",
+    "object_repr": "Order object (14)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2021-07-13T11:30:30.208Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "15",
+    "object_repr": "Order object (15)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2021-07-13T11:30:37.428Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "15",
+    "object_repr": "Order object (15)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2021-07-13T12:27:39.347Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "16",
+    "object_repr": "Order object (16)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2021-07-13T12:27:39.352Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "17",
+    "object_repr": "Order object (17)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2021-07-13T12:28:59.426Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "18",
+    "object_repr": "Order object (18)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2021-07-13T12:37:21.540Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Коричневый спортивный oversized-топ ASOS DESIGN",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2021-07-13T12:37:27.393Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "19",
+    "object_repr": "Order object (19)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2021-07-13T12:39:26.843Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "20",
+    "object_repr": "Order object (20)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"C\\u0442\\u0430\\u0442\\u0443\\u0441\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2021-07-13T12:39:40.410Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "20",
+    "object_repr": "Order object (20)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"C\\u0442\\u0430\\u0442\\u0443\\u0441\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2021-07-13T12:40:05.559Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "20",
+    "object_repr": "Order object (20)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2021-07-20T14:22:32.300Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "21",
+    "object_repr": "Order object (21)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2021-07-20T14:22:32.321Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "22",
+    "object_repr": "Order object (22)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2021-07-20T14:22:32.338Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "23",
+    "object_repr": "Order object (23)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add association",
+    "content_type": 6,
+    "codename": "add_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change association",
+    "content_type": 6,
+    "codename": "change_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete association",
+    "content_type": 6,
+    "codename": "delete_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view association",
+    "content_type": 6,
+    "codename": "view_association"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add code",
+    "content_type": 7,
+    "codename": "add_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change code",
+    "content_type": 7,
+    "codename": "change_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete code",
+    "content_type": 7,
+    "codename": "delete_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view code",
+    "content_type": 7,
+    "codename": "view_code"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add nonce",
+    "content_type": 8,
+    "codename": "add_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change nonce",
+    "content_type": 8,
+    "codename": "change_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete nonce",
+    "content_type": 8,
+    "codename": "delete_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view nonce",
+    "content_type": 8,
+    "codename": "view_nonce"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add user social auth",
+    "content_type": 9,
+    "codename": "add_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change user social auth",
+    "content_type": 9,
+    "codename": "change_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete user social auth",
+    "content_type": 9,
+    "codename": "delete_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view user social auth",
+    "content_type": 9,
+    "codename": "view_usersocialauth"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add partial",
+    "content_type": 10,
+    "codename": "add_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change partial",
+    "content_type": 10,
+    "codename": "change_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete partial",
+    "content_type": 10,
+    "codename": "delete_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view partial",
+    "content_type": 10,
+    "codename": "view_partial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Категорию",
+    "content_type": 11,
+    "codename": "add_productcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Категорию",
+    "content_type": 11,
+    "codename": "change_productcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Категорию",
+    "content_type": 11,
+    "codename": "delete_productcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Категорию",
+    "content_type": 11,
+    "codename": "view_productcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Прдукт",
+    "content_type": 12,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Прдукт",
+    "content_type": 12,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Прдукт",
+    "content_type": 12,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Прдукт",
+    "content_type": 12,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 13,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 13,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 13,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 13,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add shop user profile",
+    "content_type": 14,
+    "codename": "add_shopuserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change shop user profile",
+    "content_type": 14,
+    "codename": "change_shopuserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete shop user profile",
+    "content_type": 14,
+    "codename": "delete_shopuserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view shop user profile",
+    "content_type": 14,
+    "codename": "view_shopuserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add basket",
+    "content_type": 15,
+    "codename": "add_basket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change basket",
+    "content_type": 15,
+    "codename": "change_basket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete basket",
+    "content_type": 15,
+    "codename": "delete_basket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view basket",
+    "content_type": 15,
+    "codename": "view_basket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add Заказ",
+    "content_type": 16,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change Заказ",
+    "content_type": 16,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete Заказ",
+    "content_type": 16,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view Заказ",
+    "content_type": 16,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add Элемент",
+    "content_type": 17,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change Элемент",
+    "content_type": 17,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete Элемент",
+    "content_type": 17,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view Элемент",
+    "content_type": 17,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6sa0l3dxo5tq24nxrq1a73elbajz6lzt",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGlnf8U5JnzNYfzE4gBIpS4W4O0RKAe2bmfdSBbe1lW2pcxlEnZVRp9-NkB913IHccbxNmqdxnQfSu6IPuuh-kvq8HO7fQcOlfWvKKAIm2GulLkefAvsEzOgArI1RTA01dMZRio7YsKTOkktZPGAGUO8P3-w3Zw:1m3Hgv:yu9sZzNo-oZFkwqH8xwfcboXGE2rl4var4peQuOgHf8",
+    "expire_date": "2021-07-27T12:39:13.454Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "s3munyxve8eaa96ijrw60laqvzdy5v18",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGlnf8U5JnzNYfzE4gBIpS4W4O0RKAe2bmfdSBbe1lW2pcxlEnZVRp9-NkB913IHccbxNmqdxnQfSu6IPuuh-kvq8HO7fQcOlfWvKKAIm2GulLkefAvsEzOgArI1RTA01dMZRio7YsKTOkktZPGAGUO8P3-w3Zw:1m5pw5:iQRJyXNuU39ArniAghPGWBZ5IGEtp37yZQNakFrrLy4",
+    "expire_date": "2021-08-03T13:37:25.289Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xdnplb8susc41r252jxzxqfc5tpnjbvr",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGlnf8U5JnzNYfzE4gBIpS4W4O0RKAe2bmfdSBbe1lW2pcxlEnZVRp9-NkB913IHccbxNmqdxnQfSu6IPuuh-kvq8HO7fQcOlfWvKKAIm2GulLkefAvsEzOgArI1RTA01dMZRio7YsKTOkktZPGAGUO8P3-w3Zw:1m592v:r28dX3dvgLfkqv54pSUev9mjgelOvxbrYHdl89jaj2s",
+    "expire_date": "2021-08-01T15:49:37.644Z"
+  }
+},
+{
+  "model": "social_django.usersocialauth",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "provider": "vk-oauth2",
+    "uid": "603560293",
+    "extra_data": "{\"auth_time\": 1626179939, \"id\": 603560293, \"expires\": 86400, \"access_token\": \"ffbee97a278b38ac0bdbc3536ab3e92a0512addcd9ce20b2789164872d09fc681e8197879f3fb2fefe748\", \"token_type\": null}",
+    "created": "2021-07-11T14:06:25.571Z",
+    "modified": "2021-07-13T12:38:59.043Z"
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Одежда",
+    "descripton": "Описание одежды"
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Сумки",
+    "descripton": null
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 4,
+  "fields": {
+    "name": "Обувь",
+    "descripton": null
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 5,
+  "fields": {
+    "name": "Аксессуары",
+    "descripton": null
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 6,
+  "fields": {
+    "name": "Подарки",
+    "descripton": null
+  }
+},
+{
+  "model": "products.productcategory",
+  "pk": 7,
+  "fields": {
+    "name": "Новинки",
+    "descripton": null
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Худи черного цвета с монограммами adidas Originals",
+    "image": "products_images/Adidas-hoodie_kUEGy0V.png",
+    "description": "Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни..",
+    "price": "6090.00",
+    "quantity": 100,
+    "category": 2
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Синяя куртка The North Face",
+    "image": "products_images/Blue-jacket-The-North-Face.png",
+    "description": "Гладкая ткань. Водонепроницаемое покрытие. Легкий и теплый пухов",
+    "price": "23725.00",
+    "quantity": 100,
+    "category": 2
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Коричневый спортивный oversized-топ ASOS DESIGN",
+    "image": "products_images/Brown-sports-oversized-top-ASOS-DESIGN.png",
+    "description": "Материал с плюшевой текстурой. Удобный и мягкий.",
+    "price": "3390.00",
+    "quantity": 101,
+    "category": 2
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Черный рюкзак Nike Heritage",
+    "image": "products_images/Black-Nike-Heritage-backpack.png",
+    "description": "Плотная ткань. Легкий материал.",
+    "price": "2340.00",
+    "quantity": 100,
+    "category": 3
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Черные туфли на платформе с 3 парами люверсов Dr Martens 1461 Bex",
+    "image": "products_images/Black-Dr-Martens-shoes.png",
+    "description": "Гладкий кожаный верх. Натуральный материал.",
+    "price": "13590.00",
+    "quantity": 100,
+    "category": 4
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Темно-синие широкие строгие брюки ASOS DESIGN",
+    "image": "products_images/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png",
+    "description": "Легкая эластичная ткань сирсакер Фактурная ткань.",
+    "price": "2890.00",
+    "quantity": 100,
+    "category": 2
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$9u6chwN24xNYDHTLXYp6oT$al1BaI0oKju+wc2weU87OcZ/kVuZ26CJAeRHL1HFzvM=",
+    "last_login": "2021-07-24T11:32:20.881Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Никита",
+    "last_name": "Кульков",
+    "email": "kulkovnik93@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-07-11T10:27:08.867Z",
+    "avatar": "users_image/sova_art_minimalizm_105576_1680x1050.jpg",
+    "age": 18,
+    "activation_key": "",
+    "activation_key_expires": "2021-07-13T10:26:54.339Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "!wwAmdz52zhgVSzcNjwVJi6xzj3e3Km98tnXNUyUB",
+    "last_login": "2021-07-13T12:38:59.061Z",
+    "is_superuser": false,
+    "username": "id603560293",
+    "first_name": "Никита",
+    "last_name": "Игоревич",
+    "email": "kulkovnik93@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-07-11T14:06:25.561Z",
+    "avatar": "",
+    "age": 18,
+    "activation_key": "",
+    "activation_key_expires": "2021-07-13T14:05:18.961Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.shopuserprofile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "tagline": "#admin",
+    "about_me": "about me",
+    "gender": "M"
+  }
+},
+{
+  "model": "users.shopuserprofile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "tagline": "",
+    "about_me": "",
+    "gender": ""
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 24,
+  "fields": {
+    "user": 1,
+    "created": "2021-07-20T14:22:50.113Z",
+    "updated": "2021-07-20T14:22:56.351Z",
+    "is_active": true,
+    "status": "STR"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 41,
+  "fields": {
+    "order": 24,
+    "product": 1,
+    "quantity": 1
+  }
+}
+]
