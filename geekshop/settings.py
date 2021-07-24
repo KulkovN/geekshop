@@ -93,14 +93,37 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'geekshop.wsgi.application'
 
-
+# стандартное подключение в sqllite3
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+""" default at django """
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+""" for environ: """
+# DATABASES = {'default': env.db('DATABASE_URL')}
+# DATABASES["default"]["ATOMIC_REQUESTS"] = True 
+
+""" postgresql: """  
+# DATABASES = {
+#     'default' : {
+#         'ENGINE' : 'django.db.backends.postgresql',
+#         'NAME' : ' geekshop',
+#         'USER' : 'postgres', 
+#     }
+# }
+
+""" mysql: """
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default' : {
+        'ENGINE' : 'django.db.backends.mysql',
+        'NAME' : 'geekshop',
+        'USER' : 'geekshop_all_hosts',
     }
 }
 
