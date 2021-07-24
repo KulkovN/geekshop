@@ -40,9 +40,6 @@ class Basket(models.Model):
 
 
 
-
-
-
 # работа с остатками товара через использование менеджера объектов
 class BasketQuerySet(models.QuerySet):
 
@@ -81,7 +78,7 @@ class Basket(models.Model):
     def get_item(pk):
         return Basket.objects.get(pk=pk)
 
-    # переопределение методов delete и save для менеджера лбъектов
+    # переопределение методов delete и save для менеджера объектов
     def delete(self, *args, **kwargs):
         self.product.quantity += self.quantity
         self.product.save()

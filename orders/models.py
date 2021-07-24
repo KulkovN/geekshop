@@ -59,6 +59,10 @@ class Order(models.Model):
         self.is_active = False
         self.save()
 
+    @staticmethod
+    def get_item(pk):
+        return Order.objects.get(pk=pk)
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(
@@ -67,6 +71,7 @@ class OrderItem(models.Model):
         Product, on_delete=models.CASCADE, verbose_name='продукт')
     quantity = models.PositiveSmallIntegerField(
         default=0, verbose_name='количество')
+
     class Meta:
         verbose_name_plural = 'Элементы заказов'
         verbose_name = 'Элемент'

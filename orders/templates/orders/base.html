@@ -1,0 +1,127 @@
+{% comment %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    {% block css %} {% endblock css %}
+
+</head>
+
+<body>
+
+
+
+{% block content %} {% endblock content %}
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- FontAwesome script -->
+<script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+
+<script src="{% static 'js/basket.js' %}"></script>
+
+</body>
+
+{% block footer %} {% endblock footer %}
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+
+    <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    {% block css %}
+        
+    {% endblock css %}
+
+    {% block js %}
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/jquery.formset.js' %}"></script>
+        <script src="{% static 'js/orders_scripts.js' %}"></script>
+        {% comment %} <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script> {% endcomment %}
+        <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+    {% endblock js %}
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">GeekShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse position-absolute top-10 end-0" id="navbarResponsive" style="margin: 300px">
+            <ul class="navbar-nav ml-auto">
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">
+                            Главная 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products:show_contacts' %}">
+                            Контакты 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products:index' %}">
+                        Каталог 
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+            <li>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ user.username }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a class="dropdown-item" href="{% url 'users:profile'%}">Профиль</a></li>
+                        <li><a class="dropdown-item" href="{% url 'orders:list' %}">Заказы</a></li>
+                        {% if user.is_staff or user.is_superuser %}
+                            <li><a class="dropdown-item" href="{% url 'admins:index' %}"><i class="fas fa-users-cog"></i> Админка </a></li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:logout' %}">Выйти </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:login' %}">Войти <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock content %}
+</body>
+</html>

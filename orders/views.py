@@ -13,14 +13,6 @@ from django.urls import reverse
 from django.dispatch import receiver
 
 
-"""def show_orders(request):
-    context = { 
-        'title':'GeekShop | Заказы',
-        'object_list':Order.objects.all()
-    }
-    return render (request, 'orders/check_orders.html', context)"""
-
-
 class OrderList(ListView):
     model = Order
     title = 'Заказы'
@@ -36,7 +28,8 @@ class OrderCreate(CreateView):
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra=1)
+        OrderFormSet = inlineformset_factory(
+            Order, OrderItem, form=OrderItemForm, extra=1)
         if self.request.POST:
             formset = OrderFormSet(self.request.POST)
         else:
@@ -87,7 +80,8 @@ class OrderUpdate(UpdateView):
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra=1)
+        OrderFormSet = inlineformset_factory(
+            Order, OrderItem, form=OrderItemForm, extra=1)
         if self.request.POST:
             formset = OrderFormSet(self.request.POST, instance=self.object)
         else:
@@ -129,3 +123,21 @@ def forming_complete(request, pk):
     order.status = Order.SENT_TO_PROCEED
     order.save()
     return HttpResponseRedirect(reverse('orders:list'))
+
+
+# реализация сигналов Basket и Order (save -- delete)
+# @receiver(pre_save, sender=Basket)
+# @receiver(pre_save, sender=Order)
+# def product_quantity_update_save(sender, updated_fields, instance, **kwargs):
+#     if instance.pk:
+#         instance.product.quantity -= instance.quantity - instance.get_item(instance.pk).quantity
+#     else:
+#         instance.product.quantity -= instance.quantity
+#     instance.product.save()
+
+
+# @receiver(pre_delete, sender=Basket)
+# @receiver(pre_delete, sender=Order)
+# def product_quantity_update_delete(sender, instance, **kwargs):
+#     instance.product.quantity += instance.quantity
+#     instance.product.save()
