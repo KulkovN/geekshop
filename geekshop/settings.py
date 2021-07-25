@@ -107,6 +107,7 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 """ environ usage: """
 # DATABASES = {'default': env.db('DATABASE_URL')}
 # DATABASES["default"]["ATOMIC_REQUESTS"] = True 
+
 """ postgresql: """  
 DATABASES = {
     'default' : {
