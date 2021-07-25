@@ -109,26 +109,26 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # DATABASES["default"]["ATOMIC_REQUESTS"] = True 
 
 """ postgresql: """  
-# DATABASES = {
-#     'default' : {
-#         'ENGINE' : 'django.db.backends.postgresql',
-#         'NAME' : ' geekshop',
-#         'USER' : 'postgres', 
-#     }
-# }
-""" mysql: """
 DATABASES = {
     'default' : {
-        'ENGINE' : 'django.db.backends.mysql',
+        'ENGINE' : 'django.db.backends.postgresql',
         'NAME' : 'geekshop',
-        'USER' : 'gs1',
-        # for pythonanywhere: 
-        # 'USER' : 'geekshop1',   
-        # 'HOST' : 'geekshop1.mysql.pythonanywhere-services.com',
-        # 'PASSWORD' : '3571827Nike'.
-        'PASSWORD' : '3571',
+        'USER' : 'postgres', 
     }
 }
+""" mysql: """
+# DATABASES = {
+#     'default' : {
+#         'ENGINE' : 'django.db.backends.mysql',
+#         'NAME' : 'geekshop',
+#         'USER' : 'gs1',
+#         # for pythonanywhere: 
+#         # 'USER' : 'geekshop1',   
+#         # 'HOST' : 'geekshop1.mysql.pythonanywhere-services.com',
+#         # 'PASSWORD' : '3571827Nike'.
+#         'PASSWORD' : '3571',
+#     }
+# }
 
 
 # Password validation
