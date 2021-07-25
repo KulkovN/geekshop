@@ -1,47 +1,3 @@
-{% comment %} {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>{{ title }}</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-
-
-    {% block css %} {% endblock css %}
-
-</head>
-
-<body>
-
-
-
-{% block content %} {% endblock content %}
-
-
-
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-
-<!-- FontAwesome script -->
-<script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
-
-<script src="{% static 'js/basket.js' %}"></script>
-
-</body>
-
-{% block footer %} {% endblock footer %}
-</html> {% endcomment %}
-
 <!DOCTYPE html>
 {% load static %}
 <html>
@@ -66,6 +22,14 @@
         <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
     {% endblock js %}
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/img/favicons/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicons/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicons/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static '/img/favicons/site.webmanifest'%}">
+    <link rel="mask-icon" href="{% static '/img/favicons/safari-pinned-tab.svg'%}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
