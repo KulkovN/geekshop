@@ -121,6 +121,10 @@ DATABASES = {
         'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'geekshop',
         'USER' : 'gs1',
+        # for pythonanywhere: 
+        # 'USER' : 'geekshop1',   
+        # 'HOST' : 'geekshop1.mysql.pythonanywhere-services.com',
+        # 'PASSWORD' : '3571827Nike'.
         'PASSWORD' : '3571',
     }
 }
