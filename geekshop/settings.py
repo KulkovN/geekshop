@@ -104,11 +104,9 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
-""" for environ: """
+""" environ usage: """
 # DATABASES = {'default': env.db('DATABASE_URL')}
 # DATABASES["default"]["ATOMIC_REQUESTS"] = True 
-
 """ postgresql: """  
 # DATABASES = {
 #     'default' : {
@@ -117,13 +115,17 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 #         'USER' : 'postgres', 
 #     }
 # }
-
 """ mysql: """
 DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'geekshop',
-        'USER' : 'geekshop_all_hosts',
+        'USER' : 'gs1',
+        # for pythonanywhere: 
+        # 'USER' : 'geekshop1',   
+        # 'HOST' : 'geekshop1.mysql.pythonanywhere-services.com',
+        # 'PASSWORD' : '3571827Nike'.
+        'PASSWORD' : '3571',
     }
 }
 
