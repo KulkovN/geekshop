@@ -4,4 +4,12 @@ from django.contrib import admin
 
 from users.models import User
 
-admin.site.register(User)
+
+class AdminUserView(admin.ModelAdmin):
+    list_display = ('id', 'username', 'first_name', 'last_name', 'date_joined', 'is_active',)
+    list_display_links = ('username',)
+    search_fields = ('firs_name', 'last_name',)
+
+
+admin.site.register(User, AdminUserView)
+

@@ -2,18 +2,33 @@
 {% load static %}
 {% block content %}
     {% if user.is_authenticated %}
-        <h1>
-            {{ user.user_name }}
-        </h1>
-        <br>
-            <strong> Ваш профиль активирован </strong>
-    {% else %}
-        <h1>
-            <strong> Активация не удалась. Обратитесь к администратору </strong>
-        </h1>
-    {% endif %}
-    <br>
-    <a href="{% url 'users:profile' %}">
-        Перейти в профиль
-    </a>
-{% endblock %} 
+        <div class="container text-center" style="margin-top: 300px">
+            <div class="card-body">
+                <div class="row justify-content-center"> 
+                    <div class="col-lg-6">
+                        <h1>
+                            Привет, {{ user.first_name }}
+                        </h1>
+                        Твой профиль <strong> активирован </strong>
+                        <br>
+                        <a class="btn btn-primary" href="{% url 'users:profile' %}" type="button" style="margin: 10px"> Перейти в профиль </a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+{% else %}
+        <div class="container text-center" style="margin-top: 300px">
+            <div class="card-body">
+                <div class="row justify-content-center"> 
+                    <div class="col-lg-6">
+                        <h1>
+                            <strong> Активация не удалась. Обратитесь к администратору </strong>
+                        </h1>
+                            <a href="{% url 'index' %}">Вернуться на главную</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+{% endif %}
+    
+{% endblock content %} 
