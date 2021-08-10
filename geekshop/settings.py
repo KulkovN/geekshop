@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # my_apps
     'social_django',
     'products',
     'users',
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     # additional
     'debug_toolbar',
     'template_profiler_panel',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -200,11 +202,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# ------ for local server:
 # STATICFILES_DIRS = (
 #    BASE_DIR / 'static',
 # )
+
+# ------ for production:
 STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
