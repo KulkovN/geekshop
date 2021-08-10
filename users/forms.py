@@ -63,15 +63,15 @@ class UsersRegisterForm(UserCreationForm):
 
 class UserProfileForm(UserChangeForm):
     username = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-control py-4', 'readonly': True}))
+        attrs={'class': 'form-control py-2 text-center', 'readonly': True}))
     email = forms.CharField(widget=forms.EmailInput(
-        attrs={'class': 'form-control py-4', 'readonly': False}))
+        attrs={'class': 'form-control py-2 text-center', 'readonly': False}))
     first_name = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-control py-4'}))
+        attrs={'class': 'form-control py-2'}))
     last_name = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-control py-4'}))
+        attrs={'class': 'form-control py-2'}))
     avatar = forms.ImageField(widget=forms.FileInput(
-        attrs={'class': 'custom-file-input'}), required=False)
+        attrs={'class': 'form-control py-2 custom-file-input'}), required=False)
 
     class Meta:
         model = User
@@ -80,11 +80,11 @@ class UserProfileForm(UserChangeForm):
 
 class ShopUserProfileForm(forms.ModelForm):
     tagline = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4',
+        'class': 'form-control py-2',
         'placeholder': 'Теги'
     }))
     about_me = forms.CharField(widget=forms.Textarea(attrs={
-        'class': 'form-control py-4',
+        'class': 'form-control py-2',
         'placeholder': 'О себе'
     }))
 
