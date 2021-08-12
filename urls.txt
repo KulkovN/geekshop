@@ -1,0 +1,5 @@
+http://80.78.244.232/
+http://80.78.244.232/products/
+http://80.78.244.232/products/show_contacts/
+http://80.78.244.232/users/profile/
+http://80.78.244.232/orders/

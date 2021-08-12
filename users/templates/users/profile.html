@@ -29,10 +29,10 @@
                     <label class="custom-file-label" for="{{form.avatar.id_for_label}}">Заменить автар </label>
                             {{form.avatar}}     
                 </div>
-                <div class="col-4">
-                    {% include 'baskets/baskets.html' %}
-                </div>
-            <div class="row">
+		<div class="col-4">
+                   {% include 'baskets/baskets.html' %}
+                </div>                
+	    <div class="row">
                 <div class="col-8 text-center">
                     <label class="small mb-1" for="{{form.username.id_for_label}}">Логин</label>
                         {{form.username}}
@@ -48,8 +48,8 @@
                 </div>
             </div>
         </form>
-</div>            
-
+   </div>            
+</div>
         
 {% endblock content %}
 
