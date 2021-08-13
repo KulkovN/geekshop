@@ -13,7 +13,7 @@ from baskets.models import Basket
 @login_required
 def basket_add(request, product_id):
     product = Product.objects.get(id=product_id)
-    baskets = Basket.objects.filter(user=request.user, product=product)
+    baskets = Basket.objects.filter(user=request.user, product=product).select_related('product')
 
 
     if not baskets.exists():
@@ -41,7 +41,7 @@ def basket_edit(request, id, quantity):
             basket.save()
         else:
             basket.delete()
-        baskets = Basket.objects.filter(user=request.user).select_related('user')
+        baskets = Basket.objects.filter(user=request.user).select_related('user',)
         context = {'baskets': baskets}
         result = render_to_string('baskets/baskets.html', context)
         return JsonResponse({'result': result})
