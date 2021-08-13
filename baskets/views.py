@@ -1,3 +1,4 @@
+from django.db.models.query_utils import select_related_descend
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string
@@ -40,7 +41,7 @@ def basket_edit(request, id, quantity):
             basket.save()
         else:
             basket.delete()
-        baskets = Basket.objects.filter(user=request.user)
+        baskets = Basket.objects.filter(user=request.user).select_related('user')
         context = {'baskets': baskets}
         result = render_to_string('baskets/baskets.html', context)
         return JsonResponse({'result': result})
