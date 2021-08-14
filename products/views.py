@@ -22,7 +22,7 @@ def products(request, category_id=None, page=1):
         'title': 'GeekShop - Каталог',
         'categories': ProductCategory.objects.all()}
     products_list = Product.objects.filter(
-        category_id=category_id) if category_id else Product.objects.all()
+        category_id=category_id).select_related('category') if category_id else Product.objects.all().select_related('category')
 
     paginator = Paginator(products_list, 3)
     try:

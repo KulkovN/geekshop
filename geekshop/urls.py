@@ -18,7 +18,6 @@ from django.urls import path
 from django.urls.conf import include
 
 
-from . import views
 from products.views import index
 from django.conf import settings
 from django.conf.urls.static import static

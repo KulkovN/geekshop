@@ -6,7 +6,7 @@ from django.utils.timezone import now
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from datetime import timedelta
-
+from django.utils.functional import cached_property
 # Create your models here.
 
 
