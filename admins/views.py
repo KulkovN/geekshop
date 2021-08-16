@@ -135,22 +135,19 @@ class CategoryCreateView(CreateView):
         context = super(CategoryCreateView, self).get_context_data(**kwargs)
         context['title'] = 'Админка Geekshop | Создание категории'
         return context
+    # скидка
+    def db_profile_by_type(prefix, type, queries):
+        update_queries = list(filter(lambda x: type in x['sql'], queries))
+        print(f'db_profile {type} for {prefix}:')
+        [print(query['sql']) for query in update_queries]
+
+
     
-# скидка
 def db_profile_by_type(prefix, type, queries):
     update_queries = list(filter(lambda x: type in x['sql'], queries))
     print(f'db_profile {type} for {prefix}:')
     [print(query['sql']) for query in update_queries]
     
-
-    def form_valid(self, form):
-        if 'discount' in form.cleaned_data:
-            discount = form.cleaned_data['discount']
-            if discount:
-                self.object.product_set.update(price=F('price') * (1 - discount / 100))
-                db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
-
-        return super().form_valid(form)
 
 
 @method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
@@ -166,6 +163,14 @@ class CategoryUpdateView(UpdateView):
         context['title'] = 'Админка Geekshop | Редактировать категорию'
         context['selected_category'] = ProductCategory.objects.get(id=self.kwargs['pk'])
         return context
+
+    def form_valid(self, form):
+        if 'discount' in form.cleaned_data:
+            discount = form.cleaned_data['discount']
+            if discount:
+                self.object.product_set.update(price=F('price') * (1 - discount / 100))
+                db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
+        return super().form_valid(form)
 
 
 @user_passes_test(lambda u: u.is_superuser)
