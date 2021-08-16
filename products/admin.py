@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from products.models import *
+from products.models import Product, ProductCategory
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -11,11 +11,12 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ('quantity',)
 
 class CategoryAdminForm(admin.ModelAdmin):
-    class Meta:
-        list_display = ('name','descripton',)
-        list_display_links = ('name','descripton',)
-        search_fields = ('name',)
-        ordering = ('name',)
+    list_display = ('name','descripton','discount',)
+    list_display_links = ('name',)
+    search_fields = ('name',)
+    ordering = ('name', 'discount',)
 
+admin.site.unregister(Product)
+admin.site.register(Product, ProductAdmin)
 
 admin.site.register(ProductCategory, CategoryAdminForm)
