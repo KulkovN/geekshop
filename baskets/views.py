@@ -21,7 +21,8 @@ def basket_add(request, product_id):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         basket = baskets.first().select_related('user','product')
-        basket.quantity += 1
+        # basket.quantity += 1
+        basket.quantity = F('quantity') + 1
         basket.save()
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
