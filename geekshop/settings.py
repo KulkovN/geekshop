@@ -56,10 +56,15 @@ INSTALLED_APPS = [
     'orders',
 
     # additional
-    'debug_toolbar',
-    'template_profiler_panel',
     'django_extensions',
 ]
+
+if DEBUG:
+    INSTALLED_APPS.extend([
+        'debug_toolbar',
+        'template_profiler_panel',
+    ])
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,8 +75,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+if DEBUG:
+    MIDDLEWARE.extend([
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ])
 
 if DEBUG:
     def show_toolbar(request):
@@ -166,27 +175,29 @@ SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
+if not DEBUG:
+    AUTH_PASSWORD_VALIDATORS = [
+        {
+            'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        },
+        {
+            'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        },
+        {
+            'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        },
+        {
+            'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        },
+    ]
+else:
+    # Set simple password for debug
+    AUTH_PASSWORD_VALIDATORS = []
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'  # 'en-us'
+LANGUAGE_CODE = 'ru-Ru'  # 'en-us'
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -202,17 +213,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ------ for local server:
-# STATICFILES_DIRS = (
-#    BASE_DIR / 'static',
-# )
 
-# ------ for production:
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
+if DEBUG:
+    STATICFILES_DIRS = (
+    BASE_DIR / 'static',
+    )
+else: 
+    STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -263,3 +280,17 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 )
+
+if os.name == 'posix':
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 120
+    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOW_CACHE = True

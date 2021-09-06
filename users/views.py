@@ -1,3 +1,4 @@
+from django.db.models.query_utils import select_related_descend
 from users.models import User
 from django.core.mail import send_mail
 from django.conf import settings

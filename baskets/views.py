@@ -1,3 +1,4 @@
+from django.db.models.query_utils import select_related_descend
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.template.loader import render_to_string
@@ -12,15 +13,16 @@ from baskets.models import Basket
 @login_required
 def basket_add(request, product_id):
     product = Product.objects.get(id=product_id)
-    baskets = Basket.objects.filter(user=request.user, product=product)
+    baskets = Basket.objects.filter(user=request.user, product=product).select_related('user','product')
 
 
     if not baskets.exists():
         Basket.objects.create(user=request.user, product=product, quantity=1)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        basket = baskets.first()
-        basket.quantity += 1
+        basket = baskets.first().select_related('user','product')
+        # basket.quantity += 1
+        basket.quantity = F('quantity') + 1
         basket.save()
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
@@ -40,7 +42,7 @@ def basket_edit(request, id, quantity):
             basket.save()
         else:
             basket.delete()
-        baskets = Basket.objects.filter(user=request.user)
+        baskets = Basket.objects.filter(user=request.user).select_related('user',)
         context = {'baskets': baskets}
         result = render_to_string('baskets/baskets.html', context)
         return JsonResponse({'result': result})
